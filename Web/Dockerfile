@@ -44,13 +44,17 @@ ENV ASPNETCORE_URLS=http://+:8080
 # Expose port 8080 (Render uses this port)
 EXPOSE 8080
 
-# Create a startup script that runs dummy data, then starts the app
+# Create a startup script that starts the app, then populates dummy data
 RUN echo '#!/bin/bash\n\
-echo "Starting database setup..."\n\
+echo "Starting application..."\n\
+dotnet Web.dll &\n\
+APP_PID=$!\n\
+echo "Waiting for application to start and create database..."\n\
+sleep 15\n\
 echo "Populating database with dummy data..."\n\
 python3 insert_complete_dummy_data.py\n\
-echo "Starting application..."\n\
-dotnet Web.dll' > /app/start.sh && chmod +x /app/start.sh
+echo "Dummy data populated. Application is running."\n\
+wait $APP_PID' > /app/start.sh && chmod +x /app/start.sh
 
 # Start the application
 ENTRYPOINT ["/app/start.sh"]

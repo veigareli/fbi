@@ -119,6 +119,33 @@ def clear_database():
     conn.commit()
     conn.close()
 
+def wait_for_tables():
+    """Wait for tables to be created by the .NET application"""
+    import time
+    max_attempts = 30
+    attempt = 0
+    
+    while attempt < max_attempts:
+        try:
+            conn = sqlite3.connect(DB_PATH)
+            cursor = conn.cursor()
+            cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='Users'")
+            result = cursor.fetchone()
+            conn.close()
+            
+            if result:
+                print("Database tables found!")
+                return True
+        except sqlite3.OperationalError:
+            pass
+        
+        attempt += 1
+        print(f"Waiting for database tables... (attempt {attempt}/{max_attempts})")
+        time.sleep(1)
+    
+    print("Warning: Database tables not found after waiting. Proceeding anyway...")
+    return False
+
 def insert_teams():
     """Insert all teams"""
     conn = sqlite3.connect(DB_PATH)
@@ -526,6 +553,9 @@ def main():
     print(f"Total Players: {sum(len(players) for players in PLAYERS_BY_TEAM.values())}")
     print(f"Rounds: 20 (with current round set to 21)")
     print("-" * 50)
+    
+    # Wait for tables to be created by the .NET application
+    wait_for_tables()
     
     # Clear existing data
     clear_database()
