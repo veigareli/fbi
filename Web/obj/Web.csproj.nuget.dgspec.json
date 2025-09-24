@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Web.csproj": {}
+    "/Users/veigareli/Documents/GitHub/fbi/Web/Web.csproj": {}
   },
   "projects": {
-    "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Web.csproj": {
+    "/Users/veigareli/Documents/GitHub/fbi/Web/Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Web.csproj",
+        "projectUniqueName": "/Users/veigareli/Documents/GitHub/fbi/Web/Web.csproj",
         "projectName": "Web",
-        "projectPath": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Web.csproj",
+        "projectPath": "/Users/veigareli/Documents/GitHub/fbi/Web/Web.csproj",
         "packagesPath": "/Users/veigareli/.nuget/packages/",
-        "outputPath": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/obj/",
+        "outputPath": "/Users/veigareli/Documents/GitHub/fbi/Web/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/veigareli/.nuget/NuGet/NuGet.Config"

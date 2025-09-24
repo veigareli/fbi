@@ -1,315 +1,315 @@
 {
   "Files": [
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/obj/Debug/net8.0/scopedcss/projectbundle/Web.bundle.scp.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/obj/Debug/net8.0/scopedcss/projectbundle/Web.bundle.scp.css",
       "PackagePath": "staticwebassets/Web.bundle.scp.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/css/site.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/favicon.ico",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/basketball_court.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/basketball_court.png",
       "PackagePath": "staticwebassets/images/basketball_court.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/bench.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/bench.png",
       "PackagePath": "staticwebassets/images/bench.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/jerseys/breidablik.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/jerseys/breidablik.png",
       "PackagePath": "staticwebassets/images/jerseys/breidablik.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/jerseys/empty.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/jerseys/empty.png",
       "PackagePath": "staticwebassets/images/jerseys/empty.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/jerseys/fjölnir.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/jerseys/fjölnir.png",
       "PackagePath": "staticwebassets/images/jerseys/fjölnir.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/jerseys/fylkir.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/jerseys/fylkir.png",
       "PackagePath": "staticwebassets/images/jerseys/fylkir.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/jerseys/hamar.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/jerseys/hamar.png",
       "PackagePath": "staticwebassets/images/jerseys/hamar.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/jerseys/haukar.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/jerseys/haukar.png",
       "PackagePath": "staticwebassets/images/jerseys/haukar.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/jerseys/hottur.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/jerseys/hottur.png",
       "PackagePath": "staticwebassets/images/jerseys/hottur.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/jerseys/kv.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/jerseys/kv.png",
       "PackagePath": "staticwebassets/images/jerseys/kv.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/jerseys/selfoss.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/jerseys/selfoss.png",
       "PackagePath": "staticwebassets/images/jerseys/selfoss.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/jerseys/sindri.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/jerseys/sindri.png",
       "PackagePath": "staticwebassets/images/jerseys/sindri.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/jerseys/skallagrimur.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/jerseys/skallagrimur.png",
       "PackagePath": "staticwebassets/images/jerseys/skallagrimur.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/jerseys/snæfell.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/jerseys/snæfell.png",
       "PackagePath": "staticwebassets/images/jerseys/snæfell.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/jerseys/þorak.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/jerseys/þorak.png",
       "PackagePath": "staticwebassets/images/jerseys/þorak.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/readme.md",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/readme.md",
       "PackagePath": "staticwebassets/images/readme.md"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/images/seat.png",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/images/seat.png",
       "PackagePath": "staticwebassets/images/seat.png"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/js/site.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/LICENSE",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/LICENSE",
       "PackagePath": "staticwebassets/lib/bootstrap"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/jquery-validation/LICENSE.md",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/jquery-validation/LICENSE.md",
       "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/jquery-validation/dist/additional-methods.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/jquery/LICENSE.txt",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/jquery/LICENSE.txt",
       "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/jquery/dist/jquery.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/jquery/dist/jquery.js",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/jquery/dist/jquery.min.js",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/jquery/dist/jquery.min.js",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
     },
     {
-      "Id": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/wwwroot/lib/jquery/dist/jquery.min.map",
+      "Id": "/Users/veigareli/Documents/GitHub/fbi/Web/wwwroot/lib/jquery/dist/jquery.min.map",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
     },
     {

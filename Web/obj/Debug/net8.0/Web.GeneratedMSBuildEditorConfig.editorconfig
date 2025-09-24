@@ -17,55 +17,55 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Web
 build_property.RootNamespace = Web
-build_property.ProjectDir = /Users/veigareli/Desktop/fantasy_basketball_iceland/Web/
+build_property.ProjectDir = /Users/veigareli/Documents/GitHub/fbi/Web/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/veigareli/Desktop/fantasy_basketball_iceland/Web
+build_property.MSBuildProjectDirectory = /Users/veigareli/Documents/GitHub/fbi/Web
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Views/Authentication/Login.cshtml]
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/Authentication/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aGVudGljYXRpb24vTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Views/Authentication/Register.cshtml]
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/Authentication/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aGVudGljYXRpb24vUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Views/Home/Home.cshtml]
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/Home/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Ib21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Views/Home/MyTeam.cshtml]
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/Home/MyTeam.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9NeVRlYW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Views/Home/PlayerHistory.cshtml]
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/Home/PlayerHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9QbGF5ZXJIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Views/Home/Rules.cshtml]
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/Home/Rules.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9SdWxlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Views/Shared/Error.cshtml]
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Views/_ViewImports.cshtml]
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Views/_ViewStart.cshtml]
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Views/Shared/_Layout.cshtml]
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-znl52p88st

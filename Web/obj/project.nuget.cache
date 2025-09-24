@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dAZ8N64/ysQ=",
+  "dgSpecHash": "VEiLPfYT7Co=",
   "success": true,
-  "projectFilePath": "/Users/veigareli/Desktop/fantasy_basketball_iceland/Web/Web.csproj",
+  "projectFilePath": "/Users/veigareli/Documents/GitHub/fbi/Web/Web.csproj",
   "expectedPackageFiles": [
     "/Users/veigareli/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/veigareli/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
