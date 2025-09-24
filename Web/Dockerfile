@@ -8,12 +8,11 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copy the project file and restore dependencies
-COPY ["Web/Web.csproj", "Web/"]
-RUN dotnet restore "Web/Web.csproj"
+COPY ["Web.csproj", "."]
+RUN dotnet restore "Web.csproj"
 
 # Copy the rest of the application code
-COPY Web/ Web/
-WORKDIR "/src/Web"
+COPY . .
 
 # Build the application
 RUN dotnet build "Web.csproj" -c Release -o /app/build
