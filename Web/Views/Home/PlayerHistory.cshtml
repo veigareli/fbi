@@ -1,0 +1,666 @@
+@model Web.Models.PlayerHistoryViewModel
+@{
+    ViewData["Title"] = "Player History";
+}
+
+<div class="container">
+    <!-- Round Navigation -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="/home" class="btn btn-outline-secondary">← Back to Home</a>
+                <div class="d-flex align-items-center">
+                    @if (Model.AvailableRounds.Any())
+                    {
+                        var currentIndex = Model.AvailableRounds.IndexOf(Model.SelectedRound);
+                        var prevRound = currentIndex > 0 ? Model.AvailableRounds[currentIndex - 1] : (int?)null;
+                        var nextRound = currentIndex < Model.AvailableRounds.Count - 1 ? Model.AvailableRounds[currentIndex + 1] : (int?)null;
+                        
+                        <a href="/playerhistory?id=@Model.TargetUser.Id&round=@prevRound" class="round-btn @(prevRound == null ? "disabled" : "")">
+                            ←
+                        </a>
+                        <h3 class="current-round">Round @Model.SelectedRound</h3>
+                        <a href="/playerhistory?id=@Model.TargetUser.Id&round=@nextRound" class="round-btn @(nextRound == null ? "disabled" : "")">
+                            →
+                        </a>
+                    }
+                </div>
+                <div style="width: 120px;"></div> <!-- Empty div for spacing to match back button width -->
+            </div>
+        </div>
+    </div>
+
+    @if (Model.AvailableRounds.Any())
+    {
+        <!-- Main Content Area with Gray Background -->
+        <div class="main-content-section">
+            <!-- Player Name and Total Points Display -->
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h3 class="text-primary mb-2">@Model.TargetUser.Name's Team</h3>
+                    <h2 class="text-danger">@Model.RoundPoints points</h2>
+                </div>
+            </div>
+
+            <!-- Basketball Court -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="basketball-court">
+                    <!-- Court Players -->
+                    @foreach (var positionData in Model.TeamData)
+                    {
+                        var position = positionData.GetType().GetProperty("Position")?.GetValue(positionData)?.ToString() ?? "";
+                        var courtPlayer = positionData.GetType().GetProperty("CourtPlayer")?.GetValue(positionData);
+                        
+                        if (courtPlayer != null)
+                        {
+                            var playerName = courtPlayer.GetType().GetProperty("Name")?.GetValue(courtPlayer)?.ToString() ?? "";
+                            var teamName = courtPlayer.GetType().GetProperty("TeamName")?.GetValue(courtPlayer)?.ToString() ?? "";
+                            var roundPoints = courtPlayer.GetType().GetProperty("RoundPoints")?.GetValue(courtPlayer)?.ToString() ?? "0";
+                            
+                            <div class="position-slot position-@position.ToLower()" onclick="showPlayerDetails(@courtPlayer.GetType().GetProperty("PlayerId")?.GetValue(courtPlayer), '@position', true)">
+                                <img src="/images/jerseys/@(teamName.ToLower().Replace(" ", "_")).png" 
+                                     alt="@teamName jersey" 
+                                     class="jersey-image" 
+                                     onerror="this.src='/images/jerseys/empty.png'">
+                                <div class="position-label">@position</div>
+                                <div class="player-name">@playerName</div>
+                                @{
+                                    var playerId = (int)courtPlayer.GetType().GetProperty("PlayerId")?.GetValue(courtPlayer);
+                                    var isChosen = Model.PlayerIsChosen.ContainsKey(playerId) ? Model.PlayerIsChosen[playerId] : true;
+                                    var cssClass = isChosen ? "chosen" : "not-chosen";
+                                }
+                                <div class="round-points @cssClass">@roundPoints pts</div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="position-slot position-@position.ToLower()">
+                                <img src="/images/jerseys/empty.png" alt="Empty slot" class="jersey-image">
+                                <div class="position-label">@position</div>
+                                <div class="player-name">Empty</div>
+                            </div>
+                        }
+                    }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bench Players -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="bench-section">
+                    <h5 class="mb-3">Bench Players</h5>
+                    <div class="bench-players">
+                        @foreach (var positionData in Model.TeamData)
+                        {
+                            var position = positionData.GetType().GetProperty("Position")?.GetValue(positionData)?.ToString() ?? "";
+                            var benchPlayer = positionData.GetType().GetProperty("BenchPlayer")?.GetValue(positionData);
+                            
+                            if (benchPlayer != null)
+                            {
+                                var playerName = benchPlayer.GetType().GetProperty("Name")?.GetValue(benchPlayer)?.ToString() ?? "";
+                                var teamName = benchPlayer.GetType().GetProperty("TeamName")?.GetValue(benchPlayer)?.ToString() ?? "";
+                                var roundPoints = benchPlayer.GetType().GetProperty("RoundPoints")?.GetValue(benchPlayer)?.ToString() ?? "0";
+                                
+                                <div class="bench-slot" onclick="showPlayerDetails(@benchPlayer.GetType().GetProperty("PlayerId")?.GetValue(benchPlayer), '@position', false)">
+                                    <div class="bench-jersey">
+                                        <img src="/images/jerseys/@(teamName.ToLower().Replace(" ", "_")).png" 
+                                             alt="@teamName jersey" 
+                                             class="jersey-image" 
+                                             onerror="this.src='/images/jerseys/empty.png'">
+                                        <div class="position-label">@position</div>
+                                        <div class="player-name">@playerName</div>
+                                        @{
+                                            var playerId = (int)benchPlayer.GetType().GetProperty("PlayerId")?.GetValue(benchPlayer);
+                                            var isChosen = Model.PlayerIsChosen.ContainsKey(playerId) ? Model.PlayerIsChosen[playerId] : true;
+                                            var cssClass = isChosen ? "chosen" : "not-chosen";
+                                        }
+                                        <div class="round-points @cssClass">@roundPoints pts</div>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="bench-slot">
+                                    <div class="bench-jersey">
+                                        <img src="/images/jerseys/empty.png" alt="Empty slot" class="jersey-image">
+                                        <div class="position-label">@position</div>
+                                        <div class="player-name">Empty</div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- Historical Round Banner -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="alert alert-info text-center">
+                        <strong>Historical Round:</strong> You are viewing Round @Model.SelectedRound. Team management is not available for past rounds.
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-warning text-center">
+                    <h4>No Historical Data Available</h4>
+                    <p>@Model.TargetUser.Name has not completed any rounds yet.</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .basketball-court {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        background-image: url('/images/basketball_court.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 500px;
+        margin-bottom: 20px;
+    }
+    
+    .position-slot {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        width: 120px;
+        height: 180px;
+    }
+    
+    .position-pg { top: 3%; left: 20%; }
+    .position-sg { top: 52%; left: 15%; }
+    .position-sf { top: 52%; right: 15%; }
+    .position-pf { top: 3%; right: 20%; }
+    .position-c { top: 25%; left: 50%; transform: translateX(-50%); }
+    
+    .jersey-image {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        margin-bottom: 5px;
+    }
+    
+    .position-label {
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 2px;
+    }
+    
+    .position-slot .player-name {
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 11px;
+        text-align: center;
+        width: 100%;
+        line-height: 1.2;
+        /* auto height, wrap nicely */
+        word-break: break-word;
+        hyphens: auto;
+    }
+
+    .round-points {
+        background: rgba(255, 215, 0, 0.9);
+        color: black;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: bold;
+        margin-top: 2px;
+    }
+    
+    .round-points.chosen {
+        background: #28a745;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 4px 8px;
+        border-radius: 6px;
+    }
+    
+    .round-points.not-chosen {
+        background: #dc3545;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 4px 8px;
+        border-radius: 6px;
+    }
+
+    .bench-players {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .bench-slot{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        width:120px;
+        height:auto;
+        cursor: pointer;
+    }
+
+    .bench-jersey{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:5px;
+        position: relative;
+    }
+
+    .bench-jersey .jersey-image{
+        width:120px;
+        height:120px;
+        object-fit:contain;
+        display:block;
+        margin:0;
+    }
+
+    .bench-jersey .position-label,
+    .bench-jersey .player-name{
+        position:static;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .bench-jersey .round-points {
+        background: rgba(255, 215, 0, 0.9);
+        color: black;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: bold;
+        margin-top: 2px;
+    }
+
+    .bench-jersey .round-points.chosen {
+        background: #28a745;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 4px 8px;
+        border-radius: 6px;
+    }
+    
+    .bench-jersey .round-points.not-chosen {
+        background: #dc3545;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 4px 8px;
+        border-radius: 6px;
+    }
+
+    .round-btn {
+        background: #007bff;
+        color: white;
+        padding: 16px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: bold;
+        border: 2px solid #0056b3;
+        transition: all 0.3s ease;
+    }
+
+    .round-btn:hover:not(.disabled) {
+        background: #0056b3;
+        border-color: #004085;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .round-btn.disabled {
+        background: #6c757d;
+        border-color: #5a6268;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    .current-round {
+        background: #007bff;
+        color: white;
+        padding: 20px 40px;
+        border-radius: 8px;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0 20px;
+        border: 2px solid #0056b3;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .main-content-section {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 12px;
+        margin: 20px 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .team-section {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 12px;
+        margin: 20px 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .bench-section {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 0;
+        border: none;
+        border-radius: 8px;
+        width: 80%;
+        max-width: 500px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-header {
+        background-color: #007bff;
+        color: white;
+        padding: 20px;
+        border-radius: 8px 8px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modal-header h3 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    .close {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    .close:hover {
+        opacity: 0.7;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-body p {
+        margin: 10px 0;
+        font-size: 1rem;
+    }
+
+    .modal-footer {
+        padding: 20px;
+        border-top: 1px solid #dee2e6;
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .btn-secondary:hover {
+        background-color: #545b62;
+    }
+
+    /* Statistics breakdown styling */
+    .stats-breakdown {
+        margin: 15px 0;
+    }
+
+    .stat-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .stat-row:last-child {
+        border-bottom: none;
+    }
+
+    .stat-label {
+        font-weight: 500;
+        color: #333;
+        flex: 1;
+    }
+
+    .stat-value {
+        font-weight: bold;
+        color: #007bff;
+        min-width: 40px;
+        margin-left: auto;
+        text-align: right; 
+    }
+
+    .stat-points {
+        font-weight: bold;
+        color: #28a745;
+        min-width: 60px;
+        text-align: right;
+    }
+
+    .stat-points.negative {
+        color: #dc3545;
+    }
+
+    .total-row {
+        background-color: #f8f9fa;
+        padding: 12px;
+        border-radius: 6px;
+        margin-top: 10px;
+    }
+
+    .total-row .stat-label {
+        font-size: 16px;
+        color: #007bff;
+    }
+
+    .total-row .stat-value {
+        font-size: 18px;
+        color: #007bff;
+    }
+</style>
+
+<!-- Player Details Modal -->
+<div id="playerModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modalTitle">Player Details</h3>
+            <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+        <div class="modal-body" id="modalBody">
+            <!-- Content will be populated by JavaScript -->
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Store player data for JavaScript (simplified to avoid circular references)
+    window.playerData = {
+        @foreach (var kvp in Model.PlayerDetailedStats)
+        {
+            <text>@kvp.Key: {
+                PlayerId: @kvp.Value.PlayerId,
+                PlayerName: "@Html.Raw(kvp.Value.Player.Name)",
+                TeamName: "@Html.Raw(kvp.Value.Player.Team?.Name ?? "Unknown")",
+                Position: "@Html.Raw(kvp.Value.Player.Position)",
+                Cost: @kvp.Value.Player.Cost,
+                Points: @kvp.Value.Points,
+                Rebounds: @kvp.Value.Rebounds,
+                Assists: @kvp.Value.Assists,
+                Steals: @kvp.Value.Steals,
+                Blocks: @kvp.Value.Blocks,
+                Turnovers: @kvp.Value.Turnovers,
+                TeamWin: @(kvp.Value.TeamWin ? "true" : "false"),
+                Score: "@Html.Raw(kvp.Value.Score)",
+                TotalPoints: @kvp.Value.TotalPoints
+            },</text>
+        }
+    };
+
+    function showPlayerDetails(playerId, position, isOnCourt) {
+        const modal = document.getElementById('playerModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+        
+        // Get player data from the model
+        const playerStats = window.playerData[playerId];
+        
+        if (!playerStats) {
+            modalBody.innerHTML = '<p>Player statistics not available.</p>';
+            modalTitle.textContent = 'Player Details';
+            modal.style.display = 'block';
+            return;
+        }
+
+        modalTitle.textContent = `${playerStats.PlayerName} - ${position}`;
+        
+        let modalBodyContent = `
+            <p><strong>Team:</strong> ${playerStats.TeamName}</p>
+            <p><strong>Position:</strong> ${playerStats.Position}</p>
+            <p><strong>Cost:</strong> ${playerStats.Cost} M</p>
+            <p><strong>Round Points:</strong> ${playerStats.TotalPoints}</p>
+        `;
+
+        // Add detailed statistics breakdown
+        modalBodyContent += `
+            <hr>
+            <h4>Round Performance Breakdown</h4>
+            <div class="stats-breakdown">
+                <div class="stat-row">
+                    <span class="stat-label">Points Scored:</span>
+                    <span class="stat-value">${playerStats.Points || 0}</span>
+                    <span class="stat-points">+${playerStats.Points || 0}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Rebounds:</span>
+                    <span class="stat-value">${playerStats.Rebounds || 0}</span>
+                    <span class="stat-points">+${playerStats.Rebounds || 0}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Assists:</span>
+                    <span class="stat-value">${playerStats.Assists || 0}</span>
+                    <span class="stat-points">+${playerStats.Assists || 0}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Steals:</span>
+                    <span class="stat-value">${playerStats.Steals || 0}</span>
+                    <span class="stat-points">+${(playerStats.Steals || 0) * 2}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Blocks:</span>
+                    <span class="stat-value">${playerStats.Blocks || 0}</span>
+                    <span class="stat-points">+${(playerStats.Blocks || 0) * 2}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Turnovers:</span>
+                    <span class="stat-value">${playerStats.Turnovers || 0}</span>
+                    <span class="stat-points negative">-${playerStats.Turnovers || 0}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Team Result:</span>
+                    <span class="stat-value">${playerStats.Score || 'L'}</span>
+                    <span class="stat-points ${!playerStats.TeamWin ? 'negative' : ''}">${playerStats.TeamWin ? '+5' : '-3'}</span>
+                </div>
+                <div class="total-row">
+                    <span class="stat-label">Total Fantasy Points:</span>
+                    <span class="stat-value">${playerStats.TotalPoints}</span>
+                </div>
+            </div>
+        `;
+        
+        modalBody.innerHTML = modalBodyContent;
+        modal.style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('playerModal').style.display = 'none';
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        const modal = document.getElementById('playerModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
