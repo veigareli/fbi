@@ -25,8 +25,14 @@ RUN dotnet publish "Web.csproj" -c Release -o /app/publish /p:UseAppHost=false
 FROM base AS final
 WORKDIR /app
 
+# Install Python for running the dummy data script
+RUN apt-get update && apt-get install -y python3 python3-pip && rm -rf /var/lib/apt/lists/*
+
 # Copy the published application
 COPY --from=publish /app/publish .
+
+# Copy the dummy data script
+COPY insert_complete_dummy_data.py .
 
 # Create a directory for the SQLite database
 RUN mkdir -p /app/data
@@ -38,5 +44,13 @@ ENV ASPNETCORE_URLS=http://+:8080
 # Expose port 8080 (Render uses this port)
 EXPOSE 8080
 
+# Create a startup script that runs dummy data, then starts the app
+RUN echo '#!/bin/bash\n\
+echo "Starting database setup..."\n\
+echo "Populating database with dummy data..."\n\
+python3 insert_complete_dummy_data.py\n\
+echo "Starting application..."\n\
+dotnet Web.dll' > /app/start.sh && chmod +x /app/start.sh
+
 # Start the application
-ENTRYPOINT ["dotnet", "Web.dll"]
+ENTRYPOINT ["/app/start.sh"]
