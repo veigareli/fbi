@@ -1,0 +1,25 @@
+# Build artifacts
+bin/
+obj/
+out/
+
+# IDE files
+.vs/
+.vscode/
+*.user
+*.suo
+*.cache
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database files (will be created in container)
+app.db
+app.db-*
+
+# Solution files (not needed in container)
+*.sln
