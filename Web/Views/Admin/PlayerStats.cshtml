@@ -1,0 +1,277 @@
+@model Web.Models.AdminPlayerStatsViewModel
+
+@{
+    ViewData["Title"] = "Player Statistics - Round @Model.Round";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">Player Statistics - Round @Model.Round</h1>
+            
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["Success"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+            
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["Error"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Team Selection -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Select Team</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form method="get" action="@Url.Action("PlayerStats")">
+                                <input type="hidden" name="round" value="@Model.Round">
+                                <div class="input-group">
+                                    <select name="teamId" class="form-select" onchange="this.form.submit()">
+                                        <option value="">All Teams</option>
+                                        @foreach (var team in Model.Teams)
+                                        {
+                                            <option value="@team.Id" selected="@(Model.SelectedTeamId == team.Id)">
+                                                @team.Name
+                                            </option>
+                                        }
+                                    </select>
+                                    <a href="@Url.Action("PlayerStats", new { round = Model.Round })" class="btn btn-outline-secondary">
+                                        <i class="fas fa-refresh"></i> Reset
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-muted">
+                                @if (Model.SelectedTeamId.HasValue)
+                                {
+                                    <span>Showing players from selected team (@Model.Players.Count players)</span>
+                                }
+                                else
+                                {
+                                    <span>Showing all players (@Model.Players.Count players)</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (Model.SelectedTeamId.HasValue)
+    {
+        <!-- Team Stats Table -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Team Statistics Entry</h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="@Url.Action("AddTeamStatsTable")" id="teamStatsForm">
+                            <input type="hidden" name="teamId" value="@Model.SelectedTeamId">
+                            <input type="hidden" name="round" value="@Model.Round">
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Team Result</label>
+                                    <select name="teamWin" class="form-select" required>
+                                        <option value="true">Win</option>
+                                        <option value="false">Loss</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 d-flex align-items-end">
+                                    <button type="submit" class="btn btn-success btn-lg">
+                                        <i class="fas fa-save"></i> Save Team Stats
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Player</th>
+                                            <th>Position</th>
+                                            <th>Points</th>
+                                            <th>Rebounds</th>
+                                            <th>Assists</th>
+                                            <th>Steals</th>
+                                            <th>Blocks</th>
+                                            <th>Turnovers</th>
+                                            <th>Fantasy Points</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (int i = 0; i < Model.Players.Count; i++)
+                                        {
+                                            var player = Model.Players[i];
+                                            var existingStat = Model.ExistingStats.FirstOrDefault(s => s.PlayerId == player.Id);
+                                            <tr>
+                                                <td>
+                                                    <strong>@player.Name</strong>
+                                                    <input type="hidden" name="playerStats[@i].PlayerId" value="@player.Id">
+                                                </td>
+                                                <td><span class="badge bg-primary">@player.Position</span></td>
+                                                <td>
+                                                    <input type="number" class="form-control form-control-sm" 
+                                                           name="playerStats[@i].Points" 
+                                                           value="@(existingStat?.Points ?? 0)" 
+                                                           min="0" max="100" 
+                                                           onchange="calculateFantasyPoints(this, @i)">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control form-control-sm" 
+                                                           name="playerStats[@i].Rebounds" 
+                                                           value="@(existingStat?.Rebounds ?? 0)" 
+                                                           min="0" max="50" 
+                                                           onchange="calculateFantasyPoints(this, @i)">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control form-control-sm" 
+                                                           name="playerStats[@i].Assists" 
+                                                           value="@(existingStat?.Assists ?? 0)" 
+                                                           min="0" max="30" 
+                                                           onchange="calculateFantasyPoints(this, @i)">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control form-control-sm" 
+                                                           name="playerStats[@i].Steals" 
+                                                           value="@(existingStat?.Steals ?? 0)" 
+                                                           min="0" max="10" 
+                                                           onchange="calculateFantasyPoints(this, @i)">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control form-control-sm" 
+                                                           name="playerStats[@i].Blocks" 
+                                                           value="@(existingStat?.Blocks ?? 0)" 
+                                                           min="0" max="10" 
+                                                           onchange="calculateFantasyPoints(this, @i)">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control form-control-sm" 
+                                                           name="playerStats[@i].Turnovers" 
+                                                           value="@(existingStat?.Turnovers ?? 0)" 
+                                                           min="0" max="15" 
+                                                           onchange="calculateFantasyPoints(this, @i)">
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-info" id="fantasyPoints_@i">
+                                                        @(existingStat?.FantasyPoints ?? 0)
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <!-- All Teams Overview -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">All Teams Overview</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            @foreach (var team in Model.Teams)
+                            {
+                                var teamPlayers = Model.Players.Where(p => p.TeamId == team.Id).ToList();
+                                var teamStatsCount = Model.ExistingStats.Count(s => teamPlayers.Any(p => p.Id == s.PlayerId));
+                                
+                                <div class="col-md-4 mb-3">
+                                    <div class="card @(teamStatsCount == teamPlayers.Count ? "border-success" : "border-warning")">
+                                        <div class="card-body">
+                                            <h6 class="card-title">@team.Name</h6>
+                                            <p class="card-text">
+                                                <small class="text-muted">
+                                                    @teamStatsCount / @teamPlayers.Count players have stats
+                                                </small>
+                                            </p>
+                                            @{
+                                                var buttonClass = teamStatsCount == teamPlayers.Count ? "btn-outline-success" : "btn-primary";
+                                            }
+                                            <a href="@Url.Action("PlayerStats", new { round = Model.Round, teamId = team.Id })" 
+                                               class="btn btn-sm @buttonClass">
+                                                @if (teamStatsCount == teamPlayers.Count)
+                                                {
+                                                    <i class="fas fa-edit"></i> @:Edit Stats
+                                                }
+                                                else
+                                                {
+                                                    <i class="fas fa-plus"></i> @:Add Stats
+                                                }
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        
+                        <div class="mt-3">
+                            <div class="alert alert-info">
+                                <h6><i class="fas fa-info-circle"></i> Quick Actions</h6>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <form method="post" action="@Url.Action("AddAllTeamsStats")" class="d-inline">
+                                            <input type="hidden" name="round" value="@Model.Round">
+                                            <button type="submit" class="btn btn-success" 
+                                                    onclick="return confirm('This will add random stats for ALL players. Continue?')">
+                                                <i class="fas fa-bolt"></i> Add All Teams (Random)
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="@Url.Action("Index")" class="btn btn-secondary">
+                                            <i class="fas fa-arrow-left"></i> Back to Dashboard
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+function calculateFantasyPoints(input, rowIndex) {
+    const row = input.closest('tr');
+    const points = parseInt(row.querySelector('input[name*=".Points"]').value) || 0;
+    const rebounds = parseInt(row.querySelector('input[name*=".Rebounds"]').value) || 0;
+    const assists = parseInt(row.querySelector('input[name*=".Assists"]').value) || 0;
+    const steals = parseInt(row.querySelector('input[name*=".Steals"]').value) || 0;
+    const blocks = parseInt(row.querySelector('input[name*=".Blocks"]').value) || 0;
+    const turnovers = parseInt(row.querySelector('input[name*=".Turnovers"]').value) || 0;
+    
+    // Calculate fantasy points (without team win bonus, will be added server-side)
+    const fantasyPoints = points + rebounds + assists + (steals * 2) + (blocks * 2) - turnovers;
+    
+    document.getElementById('fantasyPoints_' + rowIndex).textContent = fantasyPoints;
+}
+</script>

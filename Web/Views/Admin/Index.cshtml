@@ -1,0 +1,107 @@
+@model Web.Models.AdminViewModel
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">Admin Dashboard</h1>
+            
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["Success"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+            
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["Error"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Current Round</h5>
+                </div>
+                <div class="card-body">
+                    <h2 class="text-primary">@Model.CurrentRound</h2>
+                    <a href="@Url.Action("Round")" class="btn btn-primary">Manage Round</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Player Statistics</h5>
+                </div>
+                <div class="card-body">
+                    <h2 class="text-info">@Model.PlayerStatsCount</h2>
+                    <p class="text-muted">Stats for Round @Model.CurrentRound</p>
+                    <a href="@Url.Action("PlayerStats", new { round = Model.CurrentRound })" class="btn btn-info">Manage Player Stats</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Users</h5>
+                </div>
+                <div class="card-body">
+                    <h2 class="text-success">@Model.UsersWithTeams / @Model.TotalUsers</h2>
+                    <p class="text-muted">Users with teams</p>
+                    <a href="@Url.Action("Calculate")" class="btn btn-success">Calculate Scores</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Quick Actions</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="@Url.Action("Round")" class="btn btn-outline-primary btn-lg w-100 mb-2">
+                                <i class="fas fa-calendar-alt"></i><br>
+                                Change Round
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="@Url.Action("PlayerStats", new { round = Model.CurrentRound })" class="btn btn-outline-info btn-lg w-100 mb-2">
+                                <i class="fas fa-chart-line"></i><br>
+                                Add Player Stats
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="@Url.Action("Calculate")" class="btn btn-outline-success btn-lg w-100 mb-2">
+                                <i class="fas fa-calculator"></i><br>
+                                Calculate Scores
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="@Url.Action("Index", "Home")" class="btn btn-outline-secondary btn-lg w-100 mb-2">
+                                <i class="fas fa-home"></i><br>
+                                Back to Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

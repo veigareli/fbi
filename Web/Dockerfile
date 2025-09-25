@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y python3 python3-pip && rm -rf /var/lib/
 COPY --from=publish /app/publish .
 
 # Copy the dummy data script
-COPY insert_complete_dummy_data.py .
+COPY insert_complete_dummy_data_docker.py .
 
 # Create a directory for the SQLite database
 RUN mkdir -p /app/data
@@ -40,6 +40,7 @@ RUN mkdir -p /app/data
 # Set environment variables for production
 ENV ASPNETCORE_ENVIRONMENT=Production
 ENV ASPNETCORE_URLS=http://+:8080
+ENV ConnectionStrings__DefaultConnection=Data Source=/app/data/app.db
 
 # Expose port 8080 (Render uses this port)
 EXPOSE 8080
@@ -52,7 +53,7 @@ APP_PID=$!\n\
 echo "Waiting for application to start and create database..."\n\
 sleep 15\n\
 echo "Populating database with dummy data..."\n\
-python3 insert_complete_dummy_data.py\n\
+python3 insert_complete_dummy_data_docker.py\n\
 echo "Dummy data populated. Application is running."\n\
 wait $APP_PID' > /app/start.sh && chmod +x /app/start.sh
 

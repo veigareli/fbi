@@ -1,0 +1,77 @@
+@model Web.Models.AdminRoundViewModel
+
+@{
+    ViewData["Title"] = "Manage Round";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">Manage Current Round</h1>
+            
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["Success"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+            
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["Error"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Current Round</h5>
+                </div>
+                <div class="card-body">
+                    <h2 class="text-primary">@Model.CurrentRound</h2>
+                    <p class="text-muted">This is the round that users can currently select players for.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Change Round</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="@Url.Action("UpdateRound")">
+                        <div class="mb-3">
+                            <label for="roundNumber" class="form-label">New Round Number</label>
+                            <input type="number" class="form-control" id="roundNumber" name="roundNumber" 
+                                   value="@Model.CurrentRound" min="1" required>
+                            <div class="form-text">Enter the round number you want to set as current.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Round</button>
+                        <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="alert alert-info">
+                <h6><i class="fas fa-info-circle"></i> Round Management Tips</h6>
+                <ul class="mb-0">
+                    <li>Users can only select players for the current round</li>
+                    <li>When you advance to a new round, users can start selecting players for that round</li>
+                    <li>Make sure to add player statistics before calculating scores</li>
+                    <li>Consider locking previous rounds to prevent changes to historical data</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

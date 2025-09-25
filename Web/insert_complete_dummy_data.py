@@ -10,7 +10,7 @@ import random
 from datetime import datetime
 
 # Database file path
-DB_PATH = "/app/data/app.db"
+DB_PATH = "app.db"
 
 # Team names (12 teams)
 TEAMS = [
@@ -82,8 +82,15 @@ PLAYERS_BY_TEAM = {
     ]
 }
 
-# Generate 100 users
+# Generate 100 users + admin
 USERS = []
+# Add admin user first
+USERS.append({
+    "name": "Admin",
+    "email": "admin@gmail.com", 
+    "password": "admin123"
+})
+# Add regular users
 for i in range(1, 101):
     USERS.append({
         "name": f"User {i}",
@@ -586,8 +593,8 @@ def main():
     print(f"• Current round set to 21")
     print(f"• Fantasy teams, points, and budgets populated")
     print("\n🔑 Login Credentials:")
-    for user in USERS:
-        print(f"• {user['email']} / {user['password']}")
+    print("• ADMIN: admin@gmail.com / admin123")
+    print("• Regular users: user1@fantasy.com through user100@fantasy.com / user123")
 
 if __name__ == "__main__":
     main()

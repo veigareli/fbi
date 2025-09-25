@@ -1,0 +1,96 @@
+@model Web.Models.AdminCalculateViewModel
+
+@{
+    ViewData["Title"] = "Calculate Scores";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">Calculate User Scores</h1>
+            
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["Success"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+            
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["Error"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Calculate Scores for Round</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <h6><i class="fas fa-exclamation-triangle"></i> Important</h6>
+                        <p class="mb-0">This will calculate user scores based on their fantasy teams and player statistics. Make sure you have added all player statistics for this round before calculating.</p>
+                    </div>
+                    
+                    <form method="post" action="@Url.Action("CalculateScores")">
+                        <div class="mb-3">
+                            <label for="round" class="form-label">Round to Calculate</label>
+                            <input type="number" class="form-control" id="round" name="round" 
+                                   value="@Model.Round" min="1" required>
+                            <div class="form-text">Enter the round number you want to calculate scores for.</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="confirm" required>
+                                <label class="form-check-label" for="confirm">
+                                    I confirm that I have added all player statistics for this round
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success btn-lg">
+                            <i class="fas fa-calculator"></i> Calculate Scores
+                        </button>
+                        <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">How Scoring Works</h5>
+                </div>
+                <div class="card-body">
+                    <h6>Fantasy Points Formula:</h6>
+                    <ul class="small">
+                        <li>Points: +1 each</li>
+                        <li>Rebounds: +1 each</li>
+                        <li>Assists: +1 each</li>
+                        <li>Steals: +2 each</li>
+                        <li>Blocks: +2 each</li>
+                        <li>Turnovers: -1 each</li>
+                        <li>Team Win: +5</li>
+                        <li>Team Loss: -3</li>
+                    </ul>
+                    
+                    <h6>User Score Calculation:</h6>
+                    <ul class="small">
+                        <li>All 5 starters count</li>
+                        <li>Top 3 bench players count</li>
+                        <li>Total = Starters + Top 3 Bench</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -90,6 +90,12 @@ app.MapControllerRoute(
     pattern: "rules",
     defaults: new { controller = "Home", action = "Rules" });
 
+// Map admin routes
+app.MapControllerRoute(
+    name: "admin",
+    pattern: "admin/{action=Index}",
+    defaults: new { controller = "Admin" });
+
 // Map API controllers
 app.MapControllers();
 

@@ -19,9 +19,14 @@ public class AuthenticationController : Controller
     // GET: / (Login page)
     public IActionResult Login()
     {
-        // If user is already logged in, redirect to home
+        // If user is already logged in, redirect appropriately
         if (IsUserLoggedIn())
         {
+            var userEmail = HttpContext.Session.GetString("UserEmail");
+            if (userEmail == "admin@gmail.com")
+            {
+                return RedirectToAction("Index", "Admin");
+            }
             return RedirectToAction("Home", "Home");
         }
 
@@ -37,7 +42,18 @@ public class AuthenticationController : Controller
             return View("Login", model);
         }
 
-        // Find user by email
+        // Hardcoded admin check
+        if (model.Email == "admin@gmail.com" && model.Password == "admin123")
+        {
+            // Set admin session
+            HttpContext.Session.SetString("UserId", "0");
+            HttpContext.Session.SetString("UserName", "Admin");
+            HttpContext.Session.SetString("UserEmail", "admin@gmail.com");
+            
+            return RedirectToAction("Index", "Admin");
+        }
+
+        // Find user by email for regular users
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
         
         if (user == null)

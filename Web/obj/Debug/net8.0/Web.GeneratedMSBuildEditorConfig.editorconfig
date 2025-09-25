@@ -26,6 +26,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/veigareli/Documents/GitHub/fbi/Web
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/Admin/Calculate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vQ2FsY3VsYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/Admin/PlayerStats.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGxheWVyU3RhdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/veigareli/Documents/GitHub/fbi/Web/Views/Admin/Round.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUm91bmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/veigareli/Documents/GitHub/fbi/Web/Views/Authentication/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aGVudGljYXRpb24vTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
