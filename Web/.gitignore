@@ -1,0 +1,11 @@
+# SQLite temp files
+*.db-shm
+*.db-wal
+*.db-journal
+
+# SQLite database (keep out of git if using Render disk)
+*.db
+
+# Build artifacts
+bin/
+obj/
